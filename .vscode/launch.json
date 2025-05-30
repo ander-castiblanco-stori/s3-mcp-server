@@ -1,0 +1,54 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug S3 MCP Server",
+            "type": "go",
+            "request": "launch",
+            "mode": "debug",
+            "program": "${workspaceFolder}/main.go",
+            "env": {
+                "S3_BUCKET": "${env:S3_BUCKET}",
+                "S3_REGION": "${env:S3_REGION}",
+                "AWS_ACCESS_KEY_ID": "${env:AWS_ACCESS_KEY_ID}",
+                "AWS_SECRET_ACCESS_KEY": "${env:AWS_SECRET_ACCESS_KEY}",
+                "S3_ENDPOINT": "${env:S3_ENDPOINT}",
+                "LOG_LEVEL": "debug"
+            },
+            "args": [],
+            "showLog": true,
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Debug S3 MCP Server (with test env)",
+            "type": "go",
+            "request": "launch",
+            "mode": "debug",
+            "program": "${workspaceFolder}/main.go",
+            "env": {
+                "S3_BUCKET": "test-bucket",
+                "S3_REGION": "us-east-1",
+                "LOG_LEVEL": "debug"
+            },
+            "args": [],
+            "showLog": true,
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Run S3 MCP Server",
+            "type": "go",
+            "request": "launch",
+            "mode": "auto",
+            "program": "${workspaceFolder}/main.go",
+            "env": {
+                "S3_BUCKET": "${env:S3_BUCKET}",
+                "S3_REGION": "${env:S3_REGION}",
+                "AWS_ACCESS_KEY_ID": "${env:AWS_ACCESS_KEY_ID}",
+                "AWS_SECRET_ACCESS_KEY": "${env:AWS_SECRET_ACCESS_KEY}",
+                "S3_ENDPOINT": "${env:S3_ENDPOINT}",
+                "LOG_LEVEL": "info"
+            },
+            "console": "integratedTerminal"
+        }
+    ]
+}

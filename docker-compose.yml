@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  s3-mcp-server:
+    build: .
+    environment:
+      - S3_BUCKET=${S3_BUCKET}
+      - S3_REGION=${S3_REGION:-us-east-1}
+      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+      - LOG_LEVEL=debug
+    volumes:
+      - ~/.aws:/home/mcp/.aws:ro  # Mount AWS credentials
+    stdin_open: true
+    tty: true
+
+  # Example: Use with MinIO for local S3 testing
+  minio:
+    image: minio/minio:latest
+    command: server /data --console-address ":9001"
+    environment:
+      - MINIO_ROOT_USER=minioadmin
+      - MINIO_ROOT_PASSWORD=minioadmin
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    volumes:
+      - minio_data:/data
+
+volumes:
+  minio_data:

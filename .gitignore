@@ -1,0 +1,25 @@
+# Binaries
+s3-mcp-server
+s3-mcp-server.exe
+s3-mcp-server-*
+
+# Environment files
+.env
+
+# IDE files
+.vscode/settings.json
+.idea/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Test coverage
+coverage.out
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp

@@ -1,0 +1,78 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Build S3 MCP Server",
+			"type": "shell",
+			"command": "go",
+			"args": [
+				"build",
+				"-o",
+				"s3-mcp-server",
+				"."
+			],
+			"group": "build",
+			"problemMatcher": [
+				"$go"
+			]
+		},
+		{
+			"label": "Run S3 MCP Server",
+			"type": "shell",
+			"command": "./s3-mcp-server",
+			"dependsOn": "Build S3 MCP Server",
+			"group": "test",
+			"problemMatcher": [],
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"focus": false,
+				"panel": "new"
+			}
+		},
+		{
+			"label": "Test Build",
+			"type": "shell",
+			"command": "./test.sh",
+			"dependsOn": "Build S3 MCP Server",
+			"group": "test",
+			"problemMatcher": []
+		},
+		{
+			"label": "Go Mod Tidy",
+			"type": "shell",
+			"command": "go",
+			"args": ["mod", "tidy"],
+			"group": "build",
+			"problemMatcher": ["$go"]
+		},
+		{
+			"label": "Test VS Code Integration",
+			"type": "shell",
+			"command": "./test-vscode-integration.sh",
+			"dependsOn": "Build S3 MCP Server",
+			"group": "test",
+			"problemMatcher": [],
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"focus": true,
+				"panel": "new"
+			}
+		},
+		{
+			"label": "Test New Endpoint Tool",
+			"type": "shell",
+			"command": "./test-new-tool.sh",
+			"dependsOn": "Build S3 MCP Server",
+			"group": "test",
+			"problemMatcher": [],
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"focus": true,
+				"panel": "new"
+			}
+		}
+	]
+}
