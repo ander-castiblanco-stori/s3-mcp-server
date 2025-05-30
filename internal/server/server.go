@@ -10,9 +10,9 @@ import (
 	"os"
 	"strings"
 
-	"github.com/andersoncastiblanco/s3-mcp-server/internal/config"
-	"github.com/andersoncastiblanco/s3-mcp-server/internal/s3"
-	"github.com/andersoncastiblanco/s3-mcp-server/pkg/mcp"
+	"github.com/ander-castiblanco-stori/s3-mcp-server/internal/config"
+	"github.com/ander-castiblanco-stori/s3-mcp-server/internal/s3"
+	"github.com/ander-castiblanco-stori/s3-mcp-server/pkg/mcp"
 )
 
 // Server represents the MCP server

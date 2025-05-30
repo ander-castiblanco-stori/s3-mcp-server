@@ -1,4 +1,4 @@
-module github.com/andersoncastiblanco/s3-mcp-server
+module github.com/ander-castiblanco-stori/s3-mcp-server
 
 go 1.24.2
 

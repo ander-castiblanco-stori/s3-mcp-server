@@ -7,7 +7,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/andersoncastiblanco/s3-mcp-server/internal/server"
+	"github.com/ander-castiblanco-stori/s3-mcp-server/internal/server"
 )
 
 func main() {

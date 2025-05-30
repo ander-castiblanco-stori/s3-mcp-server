@@ -13,7 +13,7 @@ BLUE='\033[0;34m'
 NC='\033[0m' # No Color
 
 # Constants
-REPO="andersoncastiblanco/s3-mcp-server"
+REPO="ander-castiblanco-stori/s3-mcp-server"
 BINARY_NAME="s3-mcp-server"
 INSTALL_DIR="/usr/local/bin"
 

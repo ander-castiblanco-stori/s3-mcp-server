@@ -20,7 +20,7 @@ Model Context Protocol (MCP) is an open protocol that standardizes how applicati
 ### Method 1: One-Line Install (Recommended)
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/andersoncastiblanco/s3-mcp-server/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/ander-castiblanco-stori/s3-mcp-server/main/install.sh | bash
 ```
 
 This will:
@@ -32,17 +32,17 @@ This will:
 ### Method 2: Go Install
 
 ```bash
-go install github.com/andersoncastiblanco/s3-mcp-server@latest
+go install github.com/ander-castiblanco-stori/s3-mcp-server@latest
 ```
 
 ### Method 3: Download Binary
 
-Visit the [releases page](https://github.com/andersoncastiblanco/s3-mcp-server/releases) and download the binary for your platform.
+Visit the [releases page](https://github.com/ander-castiblanco-stori/s3-mcp-server/releases) and download the binary for your platform.
 
 ### Method 4: Docker
 
 ```bash
-docker pull ghcr.io/andersoncastiblanco/s3-mcp-server:latest
+docker pull ghcr.io/ander-castiblanco-stori/s3-mcp-server:latest
 ```
 
 ## 🐳 Docker Usage
@@ -51,7 +51,7 @@ docker pull ghcr.io/andersoncastiblanco/s3-mcp-server:latest
 
 ```bash
 # Pull from GitHub Container Registry
-docker pull ghcr.io/andersoncastiblanco/s3-mcp-server:latest
+docker pull ghcr.io/ander-castiblanco-stori/s3-mcp-server:latest
 
 # Run with environment variables
 docker run -it --rm \
@@ -59,18 +59,18 @@ docker run -it --rm \
   -e S3_REGION=us-east-1 \
   -e AWS_ACCESS_KEY_ID=your-key \
   -e AWS_SECRET_ACCESS_KEY=your-secret \
-  ghcr.io/andersoncastiblanco/s3-mcp-server:latest
+  ghcr.io/ander-castiblanco-stori/s3-mcp-server:latest
 ```
 
 ### Using with Docker Compose
 
 ```yaml
 # In your project's docker-compose.yml
-version: '3.8'
+version: "3.8"
 
 services:
   s3-mcp-server:
-    image: ghcr.io/andersoncastiblanco/s3-mcp-server:latest
+    image: ghcr.io/ander-castiblanco-stori/s3-mcp-server:latest
     environment:
       - S3_BUCKET=your-api-docs-bucket
       - S3_REGION=us-east-1
@@ -89,11 +89,16 @@ services:
     "s3YamlDocs": {
       "command": "docker",
       "args": [
-        "run", "-i", "--rm",
-        "-e", "S3_BUCKET=${input:s3-bucket}",
-        "-e", "S3_REGION=${input:aws-region}",
-        "-v", "${env:HOME}/.aws:/home/mcp/.aws:ro",
-        "ghcr.io/andersoncastiblanco/s3-mcp-server:latest"
+        "run",
+        "-i",
+        "--rm",
+        "-e",
+        "S3_BUCKET=${input:s3-bucket}",
+        "-e",
+        "S3_REGION=${input:aws-region}",
+        "-v",
+        "${env:HOME}/.aws:/home/mcp/.aws:ro",
+        "ghcr.io/ander-castiblanco-stori/s3-mcp-server:latest"
       ]
     }
   }
@@ -359,13 +364,13 @@ docker run --rm -e S3_BUCKET=your-bucket s3-mcp-server:latest
 
 ### 📋 Installation Methods Summary
 
-| Method               | Command                                                                                                  | Use Case                       |
-| -------------------- | -------------------------------------------------------------------------------------------------------- | ------------------------------ |
-| **One-line install** | `curl -fsSL https://raw.githubusercontent.com/andersoncastiblanco/s3-mcp-server/main/install.sh \| bash` | Production use across projects |
-| **Go install**       | `go install github.com/andersoncastiblanco/s3-mcp-server@latest`                                         | Go developers                  |
-| **Binary download**  | Download from [releases](https://github.com/andersoncastiblanco/s3-mcp-server/releases)                  | Manual installation            |
-| **Docker**           | `docker pull ghcr.io/andersoncastiblanco/s3-mcp-server:latest`                                           | Container environments         |
-| **Clone & build**    | `git clone && make build`                                                                                | Development                    |
+| Method               | Command                                                                                                      | Use Case                       |
+| -------------------- | ------------------------------------------------------------------------------------------------------------ | ------------------------------ |
+| **One-line install** | `curl -fsSL https://raw.githubusercontent.com/ander-castiblanco-stori/s3-mcp-server/main/install.sh \| bash` | Production use across projects |
+| **Go install**       | `go install github.com/ander-castiblanco-stori/s3-mcp-server@latest`                                         | Go developers                  |
+| **Binary download**  | Download from [releases](https://github.com/ander-castiblanco-stori/s3-mcp-server/releases)                  | Manual installation            |
+| **Docker**           | `docker pull ghcr.io/ander-castiblanco-stori/s3-mcp-server:latest`                                           | Container environments         |
+| **Clone & build**    | `git clone && make build`                                                                                    | Development                    |
 
 ### 🔄 Using Across Multiple Projects
 

@@ -13,7 +13,7 @@ BLUE='\033[0;34m'
 NC='\033[0m' # No Color
 
 # Configuration
-REPO_NAME="andersoncastiblanco/s3-mcp-server"
+REPO_NAME="ander-castiblanco-stori/s3-mcp-server"
 GHCR_IMAGE="ghcr.io/${REPO_NAME}"
 
 print_step() {

@@ -1,4 +1,4 @@
-version: '3.8'
+version: "3.8"
 
 services:
   s3-mcp-server:
@@ -10,7 +10,7 @@ services:
       - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
       - LOG_LEVEL=debug
     volumes:
-      - ~/.aws:/home/mcp/.aws:ro  # Mount AWS credentials
+      - ~/.aws:/home/mcp/.aws:ro # Mount AWS credentials
     stdin_open: true
     tty: true
 
